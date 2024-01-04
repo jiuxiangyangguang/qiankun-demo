@@ -1,0 +1,4 @@
+packages:
+  - 'qiankun-base'
+  - 'qiankun-micro-app1'
+  - 'qiankun-micro-app2'
