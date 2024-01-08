@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start qiankun-base",
+      "type": "shell",
+      "command": "cd qiankun-base; pnpm start",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^(.*):\\s+(.*):(\\d+):(\\d+)$",
+          "file": 1,
+          "message": 2,
+          "line": 3,
+          "column": 4
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Compiling...",
+          "endsPattern": "Compiled successfully!"
+        }
+      }
+    },
+    {
+      "label": "Start qiankun-micro-app1",
+      "type": "shell",
+      "command": "cd qiankun-micro-app1; pnpm start",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": "$tsc-watch"
+    },
+    {
+      "label": "Start qiankun-micro-app2",
+      "type": "shell",
+      "command": "cd qiankun-micro-app2; pnpm start",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": "$tsc-watch"
+    },
+    {
+      "label": "Start all projects",
+      "dependsOn": ["Start qiankun-base", "Start qiankun-micro-app1", "Start qiankun-micro-app2"]
+    }
+  ]
+}
